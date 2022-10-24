@@ -23,8 +23,8 @@ public class LinkedList_1
         MasterList.add( years );
         
         //Preload a CD for testing
-        names.add( "Red" );
-        albums.add( "Innocence & Instinct" );
+        names.add( "RED" );
+        albums.add( "INNOCENCE & INSTINCT" );
         genres.add( "2" );
         years.add( 2009 );
         
@@ -32,8 +32,7 @@ public class LinkedList_1
         while ( opt != 3 )
         {
             ReadFile( "Options" );                             //Output the available options
-            Scanner option = new Scanner( System.in );                //Select the option number
-            opt = option.nextInt();
+            opt = in.nextInt();
             
             switch ( opt )                                            //Switch statement to handle the current cases
             {                                                         //(will have more than 2 later)
@@ -52,18 +51,19 @@ public class LinkedList_1
     {
         System.out.println();
         System.out.println( "Enter a CD into the Organizer: " );
-        
+
+        in.nextLine();                    //"Eat" prev value so that curr is empty string
         System.out.print( "Artist: " );   //Get artist
-        String name = in.nextLine();      // <- error occurs here (only on second run through of while loop in main)
-        names.add( name );                // Error is that after the initial run, names is always = ""
+        String name = in.nextLine();
+        names.add( name.toUpperCase() );  //Add to name list
         
         System.out.print( "Album: " );    //Get album
         String album = in.nextLine();
-        albums.add( album );              //Add to album list
+        albums.add( album.toUpperCase() );//Add to album list
         
         System.out.print( "Genre: " );    //Get genre
         String genre = in.nextLine();
-        genres.add( genre );              //Add to genre list
+        genres.add( genre.toUpperCase() );//Add to genre list
         
         System.out.print( "Year: " );     //Get year
         int year = in.nextInt();
@@ -95,7 +95,16 @@ public class LinkedList_1
         FileWriter myWriter = new FileWriter( filename + ".txt" );
         myWriter.write( "" );
         myWriter.close();
-        
+    }
+
+    private static void sortAlphabetically( LinkedList<LinkedList> list)
+    {
+        int switchIndex;
+
+        for(int i = 0; i < list.get(0).size(); i++)
+        {
+
+        }
     }
     
     private static void outputLList( LinkedList<LinkedList> list ) throws IOException
@@ -103,8 +112,8 @@ public class LinkedList_1
         ArrayList<Object> temp = new ArrayList<>();                 //Add in a temporary ArrList for switching
         ArrayList<Object> CDList = new ArrayList<>();               //Add in permanent ArrList (post switch)
         
-        for ( int i = 0; i < list.get( i ).size(); i++ )            //For however long the list at list i in
-            {                                                       // MasterList
+        for ( int i = 0; i < list.get( 0 ).size(); i++ )            //For however long the list at list 1 in
+            {                                                       // MasterList (all lists are equal length)
             for ( int j = 0; j < 4; j++ )                           //For all 4 lists in the MasterList
             {
                 temp.add( list.get( j ).get( i ) );                 //Get the ith value from each jth list and
@@ -131,17 +140,18 @@ public class LinkedList_1
             
         }
         
-        clearFile( "test" );                                        //Empty the current list of CDs
+        clearFile( "test" );                                 //Empty the current list of CDs
         System.out.println();                                       //Add spacing for ~AESTHETIC~
         System.out.println( "CD List: " );
         for ( Object o : CDList )                                   //For each element in the final ArrList
         {
-            WriteFile( "test", o.toString() );                      //Add to the list of CDs
+            WriteFile( "test", o.toString() );               //Add to the list of CDs
             System.out.println( o );                                //Output the CDs
         }
         
         System.out.println();                                       //More aesthetically pleasing spacing
-        
+
+        sortAlphabetically(list);
     }
     
 }
