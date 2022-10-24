@@ -40,7 +40,7 @@ public class LinkedList_1
 
                 case 1 -> addCD();                                 //Add a CD to the MasterList
                 case 2 -> outputLList(MasterList);                 //Show the CD's in the MasterList
-                //case 3 -> ;
+
             }
         }
 
