@@ -75,7 +75,7 @@ public class LinkedList_1
 
     private static void WriteFile(String filename, String toWrite) throws IOException
     {
-        FileWriter myWriter = new FileWriter(filename+".txt",true);
+        FileWriter myWriter = new FileWriter(filename + ".txt", true);
         myWriter.write(toWrite + '\n');
         myWriter.close();
 
@@ -83,7 +83,7 @@ public class LinkedList_1
 
     private static void ReadFile(String filename) throws IOException
     {
-        Scanner myReader = new Scanner(new File(filename+".txt"));
+        Scanner myReader = new Scanner(new File(filename + ".txt"));
         while(myReader.hasNextLine())
         {
             System.out.println(myReader.nextLine());
@@ -92,7 +92,7 @@ public class LinkedList_1
 
     private static void clearFile(String filename) throws IOException
     {
-        FileWriter myWriter = new FileWriter(filename+".txt");
+        FileWriter myWriter = new FileWriter(filename + ".txt");
         myWriter.write("");
         myWriter.close();
 
@@ -111,7 +111,7 @@ public class LinkedList_1
             }                                                       //temp
         }
 
-        for(int i = 0; i < temp.size(); i+=4)                       //For as long as temp was, break into 4s
+        for(int i = 0; i < temp.size(); i += 4)                     //For as long as temp was, break into 4s
         {
             StringBuilder str = new StringBuilder();                //Declare a new StringBuilder str
 
@@ -123,7 +123,7 @@ public class LinkedList_1
                 }
                 else                                                //For the final index, just the value, no space
                 {
-                    str.append(temp.get(i+n));
+                    str.append(temp.get(i + n));
                 }
             }
 
