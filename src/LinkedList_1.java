@@ -52,24 +52,24 @@ public class LinkedList_1
         System.out.println();
         System.out.println( "Enter a CD into the Organizer: " );
 
-        in.nextLine();                    //"Eat" prev value so that curr is empty string
-        System.out.print( "Artist: " );   //Get artist
+        in.nextLine();                          //"Eat" prev value so that curr is empty string
+        System.out.print( "Artist: " );         //Get artist
         String name = in.nextLine();
-        names.add( name.toUpperCase() );  //Add to name list
+        names.add( name.toUpperCase() );        //Add to name list
         
-        System.out.print( "Album: " );    //Get album
+        System.out.print( "Album: " );          //Get album
         String album = in.nextLine();
-        albums.add( album.toUpperCase() );//Add to album list
+        albums.add( album.toUpperCase() );      //Add to album list
         
-        System.out.print( "Genre: " );    //Get genre
+        System.out.print( "Genre: " );          //Get genre
         String genre = in.nextLine();
-        genres.add( genre.toUpperCase() );//Add to genre list
+        genres.add( genre.toUpperCase() );      //Add to genre list
         
-        System.out.print( "Year: " );     //Get year
+        System.out.print( "Year: " );           //Get year
         int year = in.nextInt();
-        years.add( year );                //Add to year list
+        years.add( year );                      //Add to year list
         
-        System.out.println();             //Give extra space
+        System.out.println();                   //Give extra space
         
     }
     
