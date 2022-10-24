@@ -22,7 +22,7 @@ public class LinkedList_1
         MasterList.add(genres);
         MasterList.add(years);
 
-        //Preload a CD
+        //Preload a CD for testing
         names.add("Red");
         albums.add("Innocence & Instinct");
         genres.add("2");
