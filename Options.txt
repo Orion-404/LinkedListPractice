@@ -1,0 +1,4 @@
+------------CD Organizer------------
+1           Add a CD
+2           Show CD's
+3           Exit
